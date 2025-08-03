@@ -140,7 +140,7 @@ const navbarMenus = [
   },
   { title: "About Us", type: "link", path: "/about" },
   { title: "Contact", type: "link", path: "/contact" },
-  { title: "Blogs", type: "link", path: "/blogs" },
+  { title: "Blogs", type: "link", path: "" },
 ];
 
 const Navbar = () => {
