@@ -2,7 +2,7 @@ import React, { useState, useRef, useEffect } from "react";
 
 const Dropdown = ({ button, children }) => {
   const [open, setOpen] = useState(false);
-  const dropdownRef = useRef();
+  const dropdownRef = useRef(null);
 
   useEffect(() => {
     function handleClickOutside(event) {
@@ -15,11 +15,17 @@ const Dropdown = ({ button, children }) => {
   }, []);
 
   return (
-    <div className="relative inline-block text-left" ref={dropdownRef}>
+    <div className="relative" ref={dropdownRef}>
       <div onClick={() => setOpen(!open)}>{button}</div>
 
       {open && (
-        <div className="absolute right- mt-2 w-max bg-white rounded-lg shadow-lg z-10">
+        <div
+          className="
+           absolute mt-2 bg-white p-4 rounded-2xl shadow-lg z-10 
+           min-w-[680px] xl:min-w-[750px] max-w-[90vw]
+            left-1/2 -translate-x-1/3 lg:left-[-100%] lg:translate-x-0
+          "
+        >
           {children}
         </div>
       )}
